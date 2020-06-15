@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>
+Form 
+</title>
+<link rel = "stylesheet" type = "text/css" href = "mzamo/style.css">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<script src="formValidation.js"></script>
+<body style="background-color:powderblue;">
+
+<header>
+<h2>Mzamomtsha Primary School</h2>    
+</header>
+
+<p>
+<a href = "index1.html">Home</a>
+
+			
+            <a href="index1.html"></a>
+</p>
+
+<h2>Contact Us</h2>
+<h3> Please use this form in a decent manner!</h3>
+
+<div class = "wrapper">
+
+<form name="Form" >
+
+
+<div class = "details-area">
+    <li><label for="username">Name:</label></li>
+    <li><input type="text" name="username" size="50" /></li>
+    <li><label for="address">Address:</label></li>
+    <li><input type="text" name="address" size="50" /></li>
+    <li><label for="zip">ZIP Code:</label></li>
+    <li><input type="text" name="zip" /></li>
+    <li><label for="email">Email:</label></li>
+    <li><input type="text" name="email" size="50" /></li>
+    <li><label id="gender">Sex:</label></li>
+    <li><input type="radio" name="sex" value="Male" /><span>Male</span></li>
+    <li><input type="radio" name="sex" value="Female" /><span>Female</span></li>
+
+    <li><label for="desc">Message:</label></li>
+    <li><textarea name="desc" id="desc"></textarea></li>
+    <li><input type="submit" name="submit" value="Submit" onclick="alert('Form submitted successfully')" /></li>
+    </ul>
+
+</div>
+<ul>
+    
+</form>
+</div>
+<script>
+    function formValidation()
+{
+var uadd = document.registration.address;
+var uzip = document.registration.zip;
+var uemail = document.registration.email;
+var umsex = document.registration.msex;
+
+{
+
+{
+{
+if(alphanumeric(uadd))
+{ 
+
+{
+if(allnumeric(uzip))
+{
+if(ValidateEmail(uemail))
+{
+if(validsex(umsex,ufsex))
+{
+}
+} 
+}
+} 
+}
+}
+}
+}
+return false;
+
+} 
+
+function alphanumeric(uadd)
+{ 
+var letters = /^[0-9a-zA-Z]+$/;
+if(uadd.value.match(letters))
+{
+return true;
+}
+else
+{
+alert('User address must have alphanumeric characters only');
+uadd.focus();
+return false;
+}
+}
+
+function allnumeric(uzip)
+{ 
+var numbers = /^[0-9]+$/;
+if(uzip.value.match(numbers))
+{
+return true;
+}
+else
+{
+alert('ZIP code must have numeric characters only');
+uzip.focus();
+return false;
+}
+}
+function ValidateEmail(uemail)
+{
+var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+if(uemail.value.match(mailformat))
+{
+return true;
+}
+else
+{
+alert("You have entered an invalid email address!");
+return false;
+}
+} function validsex(umsex,ufsex)
+{
+x=0;
+
+if(umsex.checked) 
+{
+x++;
+}
+if(ufsex.checked)
+{
+x++; 
+}
+
+if (x==2)
+{
+alert('Both Male/Female are checked');
+ufsex.checked=false
+umsex.checked=false
+umsex.focus();
+return false;
+}
+
+if(x==0)
+{
+alert('Select Male/Female');
+umsex.focus();
+return false;
+}
+else
+{
+alert('Form Succesfully Submitted');
+window.location.reload()
+return true;
+}
+}
+    </script>
+
+<footer>
+<div class = "foot">
+    <a href="https://web.facebook.com/MobileMafias/" class="fa fa-facebook"></a>
+		<a href="https://twitter.com/AppMafias/" class="fa fa-twitter"></a>
+		<a href="https://www.instagram.com/mobileappmafias/" class="fa fa-instagram"></a>
+		<a href="https://mobileappmafias.wordpress.com/" class="fa fa-wordpress"></a>
+</div>
+</footer>
+
+</body>
+
+</html>
